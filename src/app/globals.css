@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-slate-bg: #FAFAFA;
+  --color-gritstone: #FFFFFF;
+  --color-drywall: #E5E5E5;
+  --color-parchment: #1A1A1A;
+  --color-fog: #555555;
+  --color-dusk: #999999;
+  --color-brass: #E63228;
+  --color-heather: #8B6E9B;
+  --color-beck: #4A9E3B;
+  --color-ember: #C45B4A;
+
+  --font-sans: var(--font-sans-var), system-ui, sans-serif;
+  --font-body: var(--font-body-var), var(--font-sans-var), system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFAFA !important;
+  color: #1A1A1A !important;
+  font-family: var(--font-sans);
+}
+
+/* Dot grid background — matches the nowt app canvas */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #C8C8C8 1px, transparent 1px);
+  background-size: 24px 24px;
 }
