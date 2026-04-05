@@ -5,8 +5,8 @@ import { AnimatedSection, itemVariants } from "./AnimatedSection";
 
 const stats = [
   {
-    label: "9 node types",
-    description: "Image gen, LLM, upscale, mask, sketch, and more to come.",
+    label: "19 node types",
+    description: "Image, video, music, speech, LLM, processing — and growing.",
   },
   {
     label: "Infinite canvas",
