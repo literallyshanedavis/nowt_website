@@ -1,63 +1,7 @@
 import { Reveal } from "./Reveal";
-
-type Plan = {
-  name: string;
-  featured?: boolean;
-  priceLabel?: React.ReactNode;
-  price: string;
-  suffix: string;
-  items: string[];
-  cta: string;
-};
-
-const plans: Plan[] = [
-  {
-    name: "Hobby",
-    priceLabel: (
-      <span className="text-fg-mute font-mono text-[11px]">free</span>
-    ),
-    price: "$0",
-    suffix: " / forever",
-    items: [
-      "Unlimited canvases",
-      "Bring your own API keys",
-      "Local drafts, 2 devices",
-      "Community templates",
-    ],
-    cta: "Download on TestFlight",
-  },
-  {
-    name: "Studio",
-    featured: true,
-    priceLabel: (
-      <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-accent px-2 py-0.5 bg-accent-soft rounded-full">
-        Most popular
-      </span>
-    ),
-    price: "$12",
-    suffix: " / month",
-    items: [
-      "Credits at cost across all 7 models",
-      "Version history, 180 days",
-      "Shared canvases, up to 3 collaborators",
-      "Pencil gestures & advanced routing",
-      "Priority queue",
-    ],
-    cta: "Start free 14-day trial",
-  },
-  {
-    name: "Team",
-    price: "$24",
-    suffix: " / editor / mo",
-    items: [
-      "Everything in Studio",
-      "Shared workspace & folders",
-      "SSO & SCIM",
-      "Custom model endpoints",
-    ],
-    cta: "Contact sales",
-  },
-];
+import { SectionLabel } from "./ui/SectionLabel";
+import { SectionHeading } from "./ui/SectionHeading";
+import { plans, type Plan } from "@/data/plans";
 
 export function Pricing() {
   return (
@@ -66,21 +10,8 @@ export function Pricing() {
       className="relative px-8 py-[120px] border-t border-line"
     >
       <Reveal className="max-w-[1200px] mx-auto">
-        <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-mute mb-[18px] before:content-[''] before:w-1.5 before:h-1.5 before:bg-accent before:rounded-[2px]">
-          Pricing
-        </div>
-        <h2
-          className="font-sans font-normal leading-[1.02] tracking-[-0.04em] m-0 mb-[18px] text-balance"
-          style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
-        >
-          Pay for runs,{" "}
-          <em
-            className="text-accent not-italic"
-            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
-          >
-            not for seats.
-          </em>
-        </h2>
+        <SectionLabel>Pricing</SectionLabel>
+        <SectionHeading accent="not for seats.">Pay for runs,</SectionHeading>
         <p className="text-[17px] text-fg-dim max-w-[560px] leading-[1.5] tracking-[-0.01em]">
           The app is free. You bring your own API keys, or top up credits at
           cost. No markups, no seat minimums.

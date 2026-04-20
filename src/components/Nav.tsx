@@ -1,3 +1,5 @@
+import { navLinks } from "@/data/nav";
+
 export function Nav() {
   return (
     <nav
@@ -7,30 +9,17 @@ export function Nav() {
           "linear-gradient(to bottom, rgba(10,10,11,0.85), rgba(10,10,11,0.55))",
       }}
     >
-      <div className="flex items-center gap-2.5 text-[20px] font-medium tracking-[-0.03em]">
+      <div className="flex items-center gap-2.5 text-[24px] font-medium tracking-[-0.03em]">
         thirtyseven
       </div>
       <ul className="flex gap-7 list-none m-0 p-0 text-[13.5px] text-fg-dim max-[820px]:hidden">
-        <li>
-          <a href="#demo" className="hover:text-fg transition-colors">
-            Canvas
-          </a>
-        </li>
-        <li>
-          <a href="#features" className="hover:text-fg transition-colors">
-            Features
-          </a>
-        </li>
-        <li>
-          <a href="#models" className="hover:text-fg transition-colors">
-            Models
-          </a>
-        </li>
-        <li>
-          <a href="#pricing" className="hover:text-fg transition-colors">
-            Pricing
-          </a>
-        </li>
+        {navLinks.map((link) => (
+          <li key={link.href}>
+            <a href={link.href} className="hover:text-fg transition-colors">
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
       <a
         href="#final"

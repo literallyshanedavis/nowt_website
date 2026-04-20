@@ -1,14 +1,13 @@
 "use server";
 
 import { getResend } from "@/lib/resend";
+import { isEmail } from "@/lib/validators";
 import WaitlistConfirmation from "@/emails/WaitlistConfirmation";
 
 export type WaitlistState =
   | { status: "idle" }
   | { status: "success"; email: string }
   | { status: "error"; message: string };
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function joinWaitlist(
   _prev: WaitlistState,
@@ -18,7 +17,7 @@ export async function joinWaitlist(
     .trim()
     .toLowerCase();
 
-  if (!email || email.length > 254 || !EMAIL_RE.test(email)) {
+  if (!email || email.length > 254 || !isEmail(email)) {
     return {
       status: "error",
       message: "That doesn't look like a valid email.",

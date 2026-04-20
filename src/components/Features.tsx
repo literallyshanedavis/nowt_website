@@ -1,4 +1,6 @@
 import { Reveal } from "./Reveal";
+import { SectionLabel } from "./ui/SectionLabel";
+import { SectionHeading } from "./ui/SectionHeading";
 
 export function Features() {
   return (
@@ -7,21 +9,8 @@ export function Features() {
       className="relative px-8 py-[120px] border-t border-line"
     >
       <Reveal className="max-w-[1200px] mx-auto">
-        <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-mute mb-[18px] before:content-[''] before:w-1.5 before:h-1.5 before:bg-accent before:rounded-[2px]">
-          Built for the iPad
-        </div>
-        <h2
-          className="font-sans font-normal leading-[1.02] tracking-[-0.04em] m-0 mb-[18px] text-balance"
-          style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
-        >
-          Thinking tools,{" "}
-          <em
-            className="text-accent not-italic"
-            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
-          >
-            not just chat.
-          </em>
-        </h2>
+        <SectionLabel>Built for the iPad</SectionLabel>
+        <SectionHeading accent="not just chat.">Thinking tools,</SectionHeading>
         <p className="text-[17px] text-fg-dim max-w-[560px] leading-[1.5] tracking-[-0.01em]">
           thirtyseven feels like a whiteboard that runs. Pinch to zoom a
           thousand nodes, pencil-tap to re-route, play any branch to see a
