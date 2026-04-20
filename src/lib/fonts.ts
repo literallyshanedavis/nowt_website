@@ -1,55 +1,23 @@
-import localFont from "next/font/local";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 
-export const frama = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Frama/PPFrama-Extralight.otf",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Frama/PPFrama-ExtralightItalic.otf",
-      weight: "200",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Frama/PPFrama-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Frama/PPFrama-RegularItalic.otf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Frama/PPFrama-Black.otf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Frama/PPFrama-BlackItalic.otf",
-      weight: "900",
-      style: "italic",
-    },
-  ],
-  variable: "--font-sans",
+export const geist = Geist({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-geist",
   display: "swap",
 });
 
-export const framaText = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Frama/PPFramaText-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Frama/PPFramaText-RegularItalic.otf",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  variable: "--font-body",
+export const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
+
+export const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
   display: "swap",
 });

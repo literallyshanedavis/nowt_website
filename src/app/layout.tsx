@@ -1,42 +1,34 @@
 import type { Metadata } from "next";
-import { frama, framaText } from "@/lib/fonts";
+import { geist, geistMono, instrumentSerif } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "nowt. — iPad-first AI workflows",
+  title: "thirtyseven — Visual AI workflows on an infinite canvas",
   description:
-    "Node-based AI creative workflows, built for iPad. Connect models, build pipelines, make something from nothing.",
+    "Visual AI workflows on an infinite canvas. Pan a thousand nodes, wire any model to any input, run any branch.",
   openGraph: {
-    title: "nowt. — Start from nothing. Make something.",
-    description: "Node-based AI creative workflows, built for iPad.",
+    title: "thirtyseven — Visual AI workflows on an infinite canvas",
+    description: "Visual AI workflows on an infinite canvas.",
     images: ["/og-image.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "nowt. — iPad-first AI workflows",
-    description: "Node-based AI creative workflows, built for iPad.",
+    title: "thirtyseven — Visual AI workflows on an infinite canvas",
+    description: "Visual AI workflows on an infinite canvas.",
     images: ["/og-image.jpg"],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      data-theme="light"
-      className={`${frama.variable} ${framaText.variable} antialiased`}
-      style={{
-        colorScheme: "light",
-        "--font-sans-var": frama.style.fontFamily,
-        "--font-body-var": framaText.style.fontFamily,
-      } as React.CSSProperties}
+      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className="relative min-h-screen bg-slate-bg text-parchment font-sans">
+      <body className="dotfield bg-bg text-fg font-sans antialiased">
         {children}
       </body>
     </html>

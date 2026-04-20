@@ -1,22 +1,24 @@
-import { Navbar } from "@/components/Navbar";
+import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { WhatIsNowt } from "@/components/WhatIsNowt";
-import { WhyIPad } from "@/components/WhyIPad";
-import { NodesShowcase } from "@/components/NodesShowcase";
-import { HowItWorks } from "@/components/HowItWorks";
-import { Waitlist } from "@/components/Waitlist";
+import { TrustSection } from "@/components/TrustSection";
+import { PipelineDemo } from "@/components/PipelineDemo";
+import { Features } from "@/components/Features";
+import { ModelsTicker } from "@/components/ModelsTicker";
+import { Pricing } from "@/components/Pricing";
+import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Nav />
       <Hero />
-      <WhyIPad />
-      <WhatIsNowt />
-      <NodesShowcase />
-      <HowItWorks />
-      <Waitlist />
+      <TrustSection />
+      <PipelineDemo />
+      <Features />
+      <ModelsTicker />
+      <Pricing />
+      <FinalCTA />
       <Footer />
     </>
   );
