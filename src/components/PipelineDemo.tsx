@@ -69,6 +69,52 @@ const edges: readonly EdgeDef[] = [
 
 const order = ["brief", "mood", "dir", "logo", "scene", "film"] as const;
 
+type Callout = {
+  id: (typeof order)[number];
+  label: string;
+  headline: string;
+  body: string;
+};
+
+const callouts: Callout[] = [
+  {
+    id: "brief",
+    label: "Brand Brief",
+    headline: "Structured context, not vibes.",
+    body: "Paste a brief, PRD, or transcript. The canvas reads it as real input — every downstream node inherits the facts.",
+  },
+  {
+    id: "mood",
+    label: "Mood Prompt",
+    headline: "Visual direction, side-by-side with copy.",
+    body: "Fragments, keywords, references — whatever steers the model. No separate moodboard tool, no context-switching.",
+  },
+  {
+    id: "dir",
+    label: "Art Direction",
+    headline: "One creative lead for the whole board.",
+    body: "A reasoning model sets tone and prompt strategy before anything renders. Every asset pulls from the same direction.",
+  },
+  {
+    id: "logo",
+    label: "Logo",
+    headline: "Ship assets in parallel, not in sequence.",
+    body: "Recraft, Ideogram, Flux — any image model on any branch. Iterate one without blocking the next.",
+  },
+  {
+    id: "scene",
+    label: "Product Scene",
+    headline: "Same direction, different surface.",
+    body: "Stop re-explaining the brand for every asset. The art direction node hands context down once, consistently.",
+  },
+  {
+    id: "film",
+    label: "Brand Film",
+    headline: "Video off the same canvas.",
+    body: "Every node sees the same lineage, so a Veo shot matches the logo matches the scene. Brand integrity, end to end.",
+  },
+];
+
 export function PipelineDemo() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
@@ -131,10 +177,10 @@ export function PipelineDemo() {
         </Reveal>
       </div>
 
-      <div ref={wrapperRef} className="relative h-[220vh]">
-        <div className="sticky top-[8vh] px-8">
+      <div ref={wrapperRef} className="relative h-[260vh]">
+        <div className="sticky top-[6vh] px-8">
           <div className="max-w-[1200px] mx-auto">
-            <div className="relative h-[min(620px,78vh)] border border-line rounded-[18px] overflow-hidden bg-bg-elev">
+            <div className="relative h-[min(580px,72vh)] border border-line rounded-[18px] overflow-hidden bg-bg-elev">
               <div className="flex items-center justify-between px-[18px] py-3 border-b border-line font-mono text-xs text-fg-dim">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1.5">
@@ -161,6 +207,35 @@ export function PipelineDemo() {
                   />
                 </div>
               </div>
+            </div>
+
+            <div className="relative mt-7 min-h-[120px]">
+              {callouts.map((c, i) => (
+                <div
+                  key={c.id}
+                  aria-hidden={step !== i}
+                  className={`absolute inset-x-0 top-0 transition-opacity duration-500 ease-out ${
+                    step === i
+                      ? "opacity-100"
+                      : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-mute mb-2.5">
+                    <span className="text-accent tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="w-[3px] h-[3px] rounded-full bg-fg-mute" />
+                    <span>{c.label}</span>
+                  </div>
+                  <p className="text-fg font-sans font-normal leading-[1.25] tracking-[-0.02em] text-balance max-w-[700px]"
+                     style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}>
+                    {c.headline}
+                  </p>
+                  <p className="text-fg-dim text-[15px] leading-[1.5] tracking-[-0.005em] max-w-[620px] mt-2">
+                    {c.body}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

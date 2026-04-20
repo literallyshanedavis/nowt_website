@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --accent-h: 220;
+  /* Burnt-orange accent. Single hue drives text, borders, pulses, pills. */
+  --accent-h: 35;
+  --accent-l: 0.65;
+  --accent-c: 0.17;
 }
 
 @theme {
@@ -12,9 +15,9 @@
   --color-fg-mute: rgba(236, 232, 225, 0.38);
   --color-line: rgba(255, 255, 255, 0.08);
   --color-line-strong: rgba(255, 255, 255, 0.14);
-  --color-accent: oklch(0.82 0.13 var(--accent-h));
-  --color-accent-soft: oklch(0.82 0.13 var(--accent-h) / 0.14);
-  --color-accent-line: oklch(0.82 0.13 var(--accent-h) / 0.5);
+  --color-accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h));
+  --color-accent-soft: oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 0.14);
+  --color-accent-line: oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 0.5);
 
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system,
     "Helvetica Neue", sans-serif;
@@ -46,6 +49,20 @@ body {
 ::selection {
   background: var(--color-accent);
   color: #0a0a0b;
+}
+
+/* ---------- ACCENT GLOW ---------- */
+/* Subtle halo wherever accent text lives — two-layer shadow for a soft,
+   lit-from-behind feel that stays quiet at small sizes. */
+.text-accent {
+  text-shadow:
+    0 0 10px oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 0.35),
+    0 0 24px oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 0.18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .text-accent {
+    text-shadow: none;
+  }
 }
 
 .dotfield {
