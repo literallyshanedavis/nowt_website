@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { Node } from "./Node";
 import type { NodeDef, EdgeDef } from "./types";
 
-const NODE_WIDTH = 180;
+const NODE_WIDTH_DESKTOP = 180;
+const NODE_WIDTH_MOBILE = 150;
+const MOBILE_BREAKPOINT = 640;
 
 export function NodeCanvas({
   nodes,
@@ -32,6 +34,10 @@ export function NodeCanvas({
   }, []);
 
   const byId = new Map(nodes.map((n) => [n.id, n]));
+  const nodeWidth =
+    size.width > 0 && size.width < MOBILE_BREAKPOINT
+      ? NODE_WIDTH_MOBILE
+      : NODE_WIDTH_DESKTOP;
 
   type EdgeState = "idle" | "flow" | "done";
   const paths = edges
@@ -39,9 +45,9 @@ export function NodeCanvas({
       const a = byId.get(fromId);
       const b = byId.get(toId);
       if (!a || !b || size.width === 0) return null;
-      const ax = (a.x / 100) * size.width + NODE_WIDTH / 2 - 4;
+      const ax = (a.x / 100) * size.width + nodeWidth / 2 - 4;
       const ay = (a.y / 100) * size.height;
-      const bx = (b.x / 100) * size.width - NODE_WIDTH / 2 + 4;
+      const bx = (b.x / 100) * size.width - nodeWidth / 2 + 4;
       const by = (b.y / 100) * size.height;
       const cx = (ax + bx) / 2;
       const d = `M ${ax} ${ay} C ${cx} ${ay}, ${cx} ${by}, ${bx} ${by}`;

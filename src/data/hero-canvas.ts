@@ -52,3 +52,37 @@ export const heroEdges: readonly EdgeDef[] = [
   ["dir", "logo"],
   ["dir", "hero"],
 ];
+
+export const heroNodesMobile: NodeDef[] = [
+  {
+    id: "brief",
+    type: "text",
+    x: 24,
+    y: 18,
+    title: "Brand Brief",
+    body: "Artisan botanical",
+    state: "done",
+  },
+  {
+    id: "dir",
+    type: "text",
+    x: 50,
+    y: 82,
+    title: "Art Direction",
+    body: "Claude Sonnet",
+    state: "running",
+  },
+  {
+    id: "hero",
+    type: "image",
+    x: 76,
+    y: 18,
+    title: "Hero Render",
+    state: "queued",
+  },
+];
+
+export const heroEdgesMobile: readonly EdgeDef[] = [
+  ["brief", "dir"],
+  ["dir", "hero"],
+];

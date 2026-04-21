@@ -1,6 +1,11 @@
 import { NodeCanvas } from "./canvas/NodeCanvas";
 import { PrimaryCTA } from "./ui/PrimaryCTA";
-import { heroNodes, heroEdges } from "@/data/hero-canvas";
+import {
+  heroNodes,
+  heroEdges,
+  heroNodesMobile,
+  heroEdgesMobile,
+} from "@/data/hero-canvas";
 
 export function Hero() {
   return (
@@ -9,10 +14,16 @@ export function Hero() {
       className="relative min-h-[92vh] flex items-center justify-center overflow-hidden isolate"
     >
       <div
-        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.42]"
+        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.42] max-[640px]:hidden"
         style={{ filter: "saturate(0.85)" }}
       >
         <NodeCanvas nodes={heroNodes} edges={heroEdges} />
+      </div>
+      <div
+        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.38] hidden max-[640px]:block"
+        style={{ filter: "saturate(0.85)" }}
+      >
+        <NodeCanvas nodes={heroNodesMobile} edges={heroEdgesMobile} />
       </div>
       <div
         aria-hidden

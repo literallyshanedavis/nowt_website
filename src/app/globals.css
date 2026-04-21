@@ -332,6 +332,26 @@ body {
   }
 }
 
+/* ---------- NODE MOBILE ---------- */
+@media (max-width: 640px) {
+  .node {
+    width: 150px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+  .node-head {
+    font-size: 10.5px;
+  }
+  .node-body {
+    font-size: 9px;
+    max-height: 28px;
+  }
+  .node-preview {
+    height: 44px;
+  }
+}
+
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
   .node,
