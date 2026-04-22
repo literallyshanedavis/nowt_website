@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  /* Burnt-orange accent. Single hue drives text, borders, pulses, pills. */
-  --accent-h: 35;
-  --accent-l: 0.65;
-  --accent-c: 0.17;
+  /* Dark-gold accent (#B5822B). Single hue drives text, borders, pulses, pills. */
+  --accent-h: 77;
+  --accent-l: 0.64;
+  --accent-c: 0.117;
 }
 
 @theme {

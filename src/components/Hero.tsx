@@ -14,13 +14,13 @@ export function Hero() {
       className="relative min-h-[92vh] flex items-center justify-center overflow-hidden isolate"
     >
       <div
-        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.42] max-[640px]:hidden"
+        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.72] max-[640px]:hidden"
         style={{ filter: "saturate(0.85)" }}
       >
         <NodeCanvas nodes={heroNodes} edges={heroEdges} />
       </div>
       <div
-        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.38] hidden max-[640px]:block"
+        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.65] hidden max-[640px]:block"
         style={{ filter: "saturate(0.85)" }}
       >
         <NodeCanvas nodes={heroNodesMobile} edges={heroEdgesMobile} />
@@ -55,7 +55,15 @@ export function Hero() {
         <div className="inline-flex items-center gap-3 flex-wrap justify-center">
           <PrimaryCTA href="#final">Join the waitlist →</PrimaryCTA>
         </div>
-        <div className="mt-6 font-mono text-[11px] tracking-[0.16em] uppercase text-fg-mute">
+        <div className="mt-6 font-mono text-[11px] tracking-[0.16em] uppercase text-fg-mute flex items-center justify-center gap-2">
+          <span
+            aria-hidden
+            className="inline-block w-[6px] h-[6px] rounded-full"
+            style={{
+              background: "var(--color-accent)",
+              animation: "pulse 2.4s ease-out infinite",
+            }}
+          />
           TestFlight · Build 003 · iPadOS 18+
         </div>
       </div>

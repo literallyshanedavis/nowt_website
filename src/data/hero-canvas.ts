@@ -31,7 +31,7 @@ export const heroNodes: NodeDef[] = [
   {
     id: "logo",
     type: "image",
-    x: 76,
+    x: 86,
     y: 22,
     title: "Logo Mark",
     state: "done",
@@ -39,7 +39,7 @@ export const heroNodes: NodeDef[] = [
   {
     id: "hero",
     type: "image",
-    x: 76,
+    x: 86,
     y: 72,
     title: "Hero Render",
     state: "queued",
