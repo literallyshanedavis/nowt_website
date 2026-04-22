@@ -29,7 +29,7 @@ export function Features() {
               viewBox="0 0 600 160"
               preserveAspectRatio="none"
             >
-              <g fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1">
+              <g fill="none" stroke="var(--color-line-strong)" strokeWidth="1">
                 <path d="M 20 120 C 120 120, 140 40, 240 40 S 380 120, 480 120 580 40, 600 40" />
                 <path d="M 20 80 C 120 80, 140 20, 240 20 S 380 140, 480 140" />
               </g>
@@ -67,7 +67,7 @@ export function Features() {
               viewBox="0 0 600 160"
               preserveAspectRatio="none"
             >
-              <g fill="none" stroke="rgba(255,255,255,0.08)">
+              <g fill="none" stroke="var(--color-line-strong)">
                 <rect x="30" y="30" width="120" height="80" rx="10" />
                 <rect x="170" y="30" width="120" height="80" rx="10" />
                 <rect x="310" y="30" width="120" height="80" rx="10" />
@@ -109,7 +109,7 @@ function FeatureCard({
 }) {
   return (
     <div
-      className={`${span} border border-line rounded-[18px] p-7 min-h-[300px] relative overflow-hidden bg-gradient-to-b from-white/[0.015] to-transparent hover:border-line-strong transition-colors`}
+      className={`${span} border border-line rounded-[18px] p-7 min-h-[300px] relative overflow-hidden bg-gradient-to-b from-[var(--color-tint-hi)] to-transparent hover:border-line-strong transition-colors`}
     >
       <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-fg-mute mb-3.5">
         {tag}

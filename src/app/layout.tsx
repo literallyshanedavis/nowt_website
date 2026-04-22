@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { geist, geistMono, instrumentSerif } from "@/lib/fonts";
+import { ThemeScript } from "@/components/ThemeScript";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,7 +28,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <ThemeScript />
+      </head>
       <body className="dotfield bg-bg text-fg font-sans antialiased">
         {children}
       </body>

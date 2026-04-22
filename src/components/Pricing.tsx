@@ -58,7 +58,7 @@ function PlanCard({ plan }: { plan: Plan }) {
                 fill={
                   plan.featured
                     ? "var(--color-accent-soft)"
-                    : "rgba(255,255,255,0.06)"
+                    : "var(--color-tint-hi-strong)"
                 }
               />
               <path
@@ -77,7 +77,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       </ul>
       <a
         href="#final"
-        className={`mt-auto px-4 py-3 text-center border rounded-full text-[13.5px] transition-colors ${plan.featured ? "bg-fg text-[#141414] border-fg hover:bg-white" : "bg-white/[0.02] text-fg border-line-strong hover:bg-white/[0.06]"}`}
+        className={`mt-auto px-4 py-3 text-center border rounded-full text-[13.5px] transition-colors ${plan.featured ? "bg-[var(--color-cta-bg)] text-[var(--color-cta-fg)] border-[var(--color-cta-bg)] hover:bg-[var(--color-cta-bg-hover)]" : "bg-[var(--color-tint-lo)] text-fg border-line-strong hover:bg-[var(--color-tint-hi-strong)]"}`}
       >
         {plan.cta}
       </a>

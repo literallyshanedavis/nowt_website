@@ -53,7 +53,7 @@ export function FinalCTA() {
                 disabled={pending}
                 maxLength={254}
                 placeholder="you@studio.com"
-                className="px-5 py-2 bg-white/[0.04] border border-line-strong rounded-full text-fg text-[13.5px] min-w-[240px] outline-none focus:border-accent transition-colors disabled:opacity-60"
+                className="px-5 py-2 bg-[var(--color-tint-lo)] border border-line-strong rounded-full text-fg text-[13.5px] min-w-[240px] outline-none focus:border-accent transition-colors disabled:opacity-60"
               />
               <PrimaryCTA
                 as="button"

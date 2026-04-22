@@ -21,7 +21,7 @@ type AsButton = Common & {
 type Props = AsLink | AsButton;
 
 const BASE =
-  "inline-flex items-center gap-2 rounded-full font-medium bg-fg text-[#141414] hover:bg-white transition-colors disabled:opacity-60 disabled:cursor-not-allowed";
+  "inline-flex items-center gap-2 rounded-full font-medium bg-[var(--color-cta-bg)] text-[var(--color-cta-fg)] hover:bg-[var(--color-cta-bg-hover)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed";
 
 export function PrimaryCTA(props: Props) {
   const {

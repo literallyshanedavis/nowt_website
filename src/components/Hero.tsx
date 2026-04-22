@@ -30,7 +30,7 @@ export function Hero() {
         className="absolute inset-0 pointer-events-none z-[2]"
         style={{
           background:
-            "radial-gradient(ellipse 55% 55% at 50% 50%, var(--color-bg) 15%, rgba(10,10,11,0.7) 40%, transparent 80%), radial-gradient(ellipse 30% 22% at 50% 44%, var(--color-accent-soft), transparent 70%)",
+            "radial-gradient(ellipse 55% 55% at 50% 50%, var(--color-bg) 15%, var(--color-scrim) 40%, transparent 80%), radial-gradient(ellipse 30% 22% at 50% 44%, var(--color-accent-soft), transparent 70%)",
         }}
       />
       <div className="relative z-[3] text-center px-6 max-w-[860px]">

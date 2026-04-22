@@ -30,7 +30,7 @@ export function ModelsTicker() {
               key={i}
               className="inline-flex items-center gap-2.5 text-fg-dim text-[17px] tracking-[-0.01em] whitespace-nowrap"
             >
-              <span className="w-[22px] h-[22px] rounded-md border border-line-strong bg-white/[0.03] inline-flex items-center justify-center font-mono text-[11px] text-fg">
+              <span className="w-[22px] h-[22px] rounded-md border border-line-strong bg-[var(--color-tint-lo)] inline-flex items-center justify-center font-mono text-[11px] text-fg">
                 {m.letter}
               </span>
               {m.name}
