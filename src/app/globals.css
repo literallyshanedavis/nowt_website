@@ -479,7 +479,7 @@ body {
 
 .studio-logo {
   color: oklch(0.96 0.01 82);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
@@ -539,7 +539,7 @@ body {
 
 .studio-hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 82svh;
   overflow: hidden;
   border-bottom: 1px solid oklch(0.94 0.01 82 / 0.08);
   background: oklch(0.105 0.006 245);
@@ -576,9 +576,16 @@ body {
 .studio-final h2 {
   margin: 0;
   color: oklch(0.97 0.01 82);
-  font-size: 5.9rem;
   font-weight: 300;
   line-height: 1.02;
+}
+
+.studio-hero-copy h1 {
+  font-size: 5.25rem;
+}
+
+.studio-final h2 {
+  font-size: 5.9rem;
 }
 
 .studio-kicker {
@@ -669,6 +676,15 @@ body {
   transform: rotate(-10deg);
 }
 
+.studio-frame img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .studio-frame-pipeline {
   background:
     linear-gradient(115deg, oklch(0.2 0.02 35), oklch(0.1 0.006 245) 48%, oklch(0.24 0.06 330)),
@@ -731,6 +747,63 @@ body {
 
 .studio-wide-frame {
   min-height: 43rem;
+}
+
+.studio-hero-subcopy {
+  max-width: 38rem;
+  margin: 1.1rem 0 0;
+  color: oklch(0.82 0.012 82);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.studio-feature-intro {
+  grid-column: 1 / -1;
+  max-width: 52rem;
+  padding-bottom: 1.2rem;
+}
+
+.studio-feature-intro h2,
+.studio-content-card h3 {
+  margin: 0;
+  color: oklch(0.96 0.01 82);
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.16;
+}
+
+.studio-feature-intro p,
+.studio-content-card p,
+.studio-card-kicker {
+  margin: 1rem 0 0;
+  color: oklch(0.68 0.011 82);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.studio-project-grid,
+.studio-feed-grid,
+.studio-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.studio-feed-grid {
+  margin-top: 0;
+}
+
+.studio-content-card {
+  border-top: 1px solid oklch(0.94 0.01 82 / 0.1);
+  padding-top: 1.15rem;
+}
+
+.studio-card-kicker {
+  color: oklch(0.72 0.12 182);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
 }
 
 .studio-strip-section {
@@ -826,7 +899,10 @@ body {
 
   .studio-feature-grid,
   .studio-section-head,
-  .studio-work-grid {
+  .studio-work-grid,
+  .studio-project-grid,
+  .studio-feed-grid,
+  .studio-team-grid {
     grid-template-columns: 1fr;
   }
 
@@ -843,7 +919,7 @@ body {
 
   .studio-hero-copy h1,
   .studio-final h2 {
-    font-size: 4.8rem;
+    font-size: 4.2rem;
   }
 
   .studio-intro,
@@ -866,7 +942,7 @@ body {
 
 @media (max-width: 620px) {
   .studio-logo {
-    font-size: 1.35rem;
+    font-size: 1.18rem;
   }
 
   .studio-pill {
@@ -876,12 +952,12 @@ body {
   }
 
   .studio-hero {
-    min-height: 92svh;
+    min-height: 78svh;
   }
 
   .studio-hero-copy h1,
   .studio-final h2 {
-    font-size: 3.7rem;
+    font-size: 3.15rem;
   }
 
   .studio-intro {
