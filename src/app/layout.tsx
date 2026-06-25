@@ -4,19 +4,19 @@ import { ThemeScript } from "@/components/ThemeScript";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "thirtyseven — Visual AI workflows on an infinite canvas",
+  title: "thirtyseven — Visual AI workflows for iPad",
   description:
-    "Visual AI workflows on an infinite canvas. Pan a thousand nodes, wire any model to any input, run any branch.",
+    "Wire up AI models on an infinite canvas. Run the whole pipeline with a tap. All on your iPad.",
   openGraph: {
-    title: "thirtyseven — Visual AI workflows on an infinite canvas",
-    description: "Visual AI workflows on an infinite canvas.",
+    title: "thirtyseven — Visual AI workflows for iPad",
+    description: "Wire up AI models on an infinite canvas. All on your iPad.",
     images: ["/og-image.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "thirtyseven — Visual AI workflows on an infinite canvas",
-    description: "Visual AI workflows on an infinite canvas.",
+    title: "thirtyseven — Visual AI workflows for iPad",
+    description: "Wire up AI models on an infinite canvas. All on your iPad.",
     images: ["/og-image.jpg"],
   },
 };
@@ -33,7 +33,7 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className="dotfield bg-bg text-fg font-sans antialiased">
+      <body className="bg-bg text-fg font-sans antialiased">
         {children}
       </body>
     </html>

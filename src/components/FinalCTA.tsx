@@ -1,9 +1,6 @@
 "use client";
 
 import { useActionState } from "react";
-import { Reveal } from "./Reveal";
-import { SectionLabel } from "./ui/SectionLabel";
-import { SectionHeading } from "./ui/SectionHeading";
 import { PrimaryCTA } from "./ui/PrimaryCTA";
 import {
   joinWaitlist,
@@ -21,30 +18,23 @@ export function FinalCTA() {
   return (
     <section
       id="final"
-      className="relative text-center px-8 pt-[140px] pb-20 border-t border-line overflow-hidden"
+      className="studio-final relative overflow-hidden border-t border-line px-6 pb-20 pt-[clamp(110px,14vw,210px)] text-center"
     >
       <div
         aria-hidden
-        className="absolute inset-x-0 -bottom-[60%] h-[600px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 50%, var(--color-accent-soft), transparent 70%)",
-        }}
+        className="studio-final-glow pointer-events-none absolute inset-x-0 bottom-0 h-[70%]"
       />
-      <Reveal className="max-w-[1200px] mx-auto relative z-[2]">
-        <SectionLabel>Soft launch · TestFlight</SectionLabel>
-        <SectionHeading accent="runs." sizeClamp="clamp(44px, 8vw, 112px)">
-          A canvas that
-        </SectionHeading>
-        <p className="text-fg-dim text-[18px] max-w-[560px] mx-auto mb-8 leading-[1.5]">
-          We&apos;re rolling out invites weekly. Drop your email and we&apos;ll
-          send you a TestFlight link in the next batch.
+      <div className="relative z-[2] mx-auto max-w-[1180px]">
+        <p className="studio-kicker">Early access</p>
+        <h2>thirtyseven is opening up.</h2>
+        <p className="mx-auto mb-8 max-w-[560px] text-[18px] leading-[1.55] text-fg-dim">
+          Get first word when the next TestFlight batch is ready.
         </p>
         {state.status !== "success" ? (
           <>
             <form
               action={formAction}
-              className="inline-flex gap-2.5 flex-wrap justify-center mb-3.5"
+              className="mb-3.5 inline-flex flex-wrap justify-center gap-2.5"
             >
               <input
                 type="email"
@@ -52,17 +42,17 @@ export function FinalCTA() {
                 required
                 disabled={pending}
                 maxLength={254}
-                placeholder="you@studio.com"
-                className="px-5 py-2 bg-[var(--color-tint-lo)] border border-line-strong rounded-full text-fg text-[13.5px] min-w-[240px] outline-none focus:border-accent transition-colors disabled:opacity-60"
+                placeholder="your@email.com"
+                className="min-w-[260px] rounded-full border border-line-strong bg-[var(--color-tint-lo)] px-5 py-3 text-[13.5px] text-fg outline-none transition-colors focus:border-accent disabled:opacity-60"
               />
               <PrimaryCTA
                 as="button"
                 type="submit"
                 disabled={pending}
-                className="px-5 py-2 text-[13.5px]"
+                className="px-5 py-3 text-[13.5px]"
                 glyphClassName="w-[13px] h-[13px] -mt-[1px]"
               >
-                {pending ? "Sending…" : "Request invite →"}
+                {pending ? "Sending..." : "Notify me"}
               </PrimaryCTA>
             </form>
             {state.status === "error" && (
@@ -78,13 +68,13 @@ export function FinalCTA() {
         ) : (
           <div className="inline-flex items-center gap-2 justify-center text-accent font-mono text-xs mb-3.5">
             <span className="w-1.5 h-1.5 bg-accent rounded-full" />
-            You&apos;re in the queue — check your inbox within 7 days.
+            You&apos;re on the list. We&apos;ll be in touch.
           </div>
         )}
         <div className="font-mono text-[11px] tracking-[0.1em] text-fg-mute uppercase">
           No spam · unsubscribe anytime · iPadOS 18+
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }

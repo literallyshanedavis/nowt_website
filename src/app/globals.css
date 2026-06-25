@@ -122,7 +122,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   line-height: 1.55;
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
   overflow-x: hidden;
 }
 
@@ -449,5 +449,460 @@ body {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ---------- THIRTYSEVEN STUDIO LANDING ---------- */
+.studio-page {
+  min-height: 100vh;
+  background: oklch(0.105 0.006 245);
+  color: oklch(0.94 0.01 82);
+}
+
+.studio-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) auto minmax(150px, 1fr);
+  align-items: center;
+  gap: 2rem;
+  padding: 1.55rem 2.85rem;
+  background:
+    linear-gradient(
+      180deg,
+      oklch(0.105 0.006 245 / 0.98),
+      oklch(0.105 0.006 245 / 0.84) 72%,
+      oklch(0.105 0.006 245 / 0)
+    );
+}
+
+.studio-logo {
+  color: oklch(0.96 0.01 82);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.studio-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+}
+
+.studio-nav-links a,
+.studio-pill {
+  color: oklch(0.76 0.012 82);
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.studio-nav-links a:hover,
+.studio-nav-links a:focus-visible {
+  color: oklch(0.96 0.01 82);
+}
+
+.studio-pill {
+  justify-self: end;
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid oklch(0.94 0.01 82 / 0.1);
+  border-radius: 999px;
+  background: oklch(0.25 0.006 245 / 0.82);
+  padding: 0 1.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.studio-pill:hover,
+.studio-pill:focus-visible {
+  border-color: oklch(0.7 0.118 182 / 0.44);
+  background: oklch(0.28 0.012 225 / 0.9);
+  color: oklch(0.72 0.12 182);
+}
+
+.studio-pill-large {
+  min-height: 3.2rem;
+  padding: 0 1.9rem;
+}
+
+.studio-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  border-bottom: 1px solid oklch(0.94 0.01 82 / 0.08);
+  background: oklch(0.105 0.006 245);
+}
+
+.studio-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.02) contrast(1.08) brightness(1.22);
+}
+
+.studio-hero-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, oklch(0.105 0.006 245 / 0.28), transparent 30%),
+    linear-gradient(90deg, oklch(0.105 0.006 245 / 0.54), transparent 58%),
+    linear-gradient(0deg, oklch(0.105 0.006 245 / 0.58), transparent 36%);
+}
+
+.studio-hero-copy {
+  position: absolute;
+  z-index: 2;
+  left: 2.9rem;
+  bottom: 2.15rem;
+  max-width: 54rem;
+}
+
+.studio-hero-copy h1,
+.studio-final h2 {
+  margin: 0;
+  color: oklch(0.97 0.01 82);
+  font-size: 5.9rem;
+  font-weight: 300;
+  line-height: 1.02;
+}
+
+.studio-kicker {
+  margin: 0 0 1rem;
+  color: oklch(0.72 0.12 182);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.studio-intro {
+  padding: 5.8rem 2.9rem 6.7rem;
+}
+
+.studio-intro p {
+  max-width: 60rem;
+  margin: 0;
+  color: oklch(0.92 0.01 82);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.18;
+}
+
+.studio-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.1rem;
+  padding: 0 2.9rem 8.5rem;
+}
+
+.studio-feature-card h2,
+.studio-section-head h2 {
+  margin: 1.45rem 0 0;
+  color: oklch(0.96 0.01 82);
+  font-size: 1.65rem;
+  font-weight: 300;
+  line-height: 1.16;
+}
+
+.studio-feature-card p,
+.studio-section-head p {
+  max-width: 45rem;
+  margin: 1rem 0 0;
+  color: oklch(0.68 0.011 82);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.studio-frame {
+  position: relative;
+  min-height: 15rem;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  background:
+    linear-gradient(125deg, oklch(0.22 0.035 225), oklch(0.12 0.008 245) 50%, oklch(0.27 0.07 28)),
+    oklch(0.12 0.008 245);
+  box-shadow: inset 0 0 0 1px oklch(0.94 0.01 82 / 0.08);
+}
+
+.studio-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, oklch(0.96 0.01 82 / 0.06), transparent 24%),
+    linear-gradient(150deg, transparent 44%, oklch(0.72 0.12 182 / 0.16), transparent 66%);
+}
+
+.studio-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    repeating-linear-gradient(0deg, oklch(0.96 0.01 82 / 0.16) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, transparent, oklch(0.96 0.01 82 / 0.1), transparent);
+  mix-blend-mode: overlay;
+}
+
+.studio-frame > span {
+  position: absolute;
+  inset: 12% 8% auto auto;
+  width: 42%;
+  height: 38%;
+  border-radius: 999px;
+  background: oklch(0.72 0.12 182 / 0.1);
+  filter: blur(2rem);
+  transform: rotate(-10deg);
+}
+
+.studio-frame-pipeline {
+  background:
+    linear-gradient(115deg, oklch(0.2 0.02 35), oklch(0.1 0.006 245) 48%, oklch(0.24 0.06 330)),
+    oklch(0.1 0.006 245);
+}
+
+.studio-frame-ipad,
+.studio-frame-finish {
+  background:
+    linear-gradient(140deg, oklch(0.2 0.035 180), oklch(0.09 0.006 245) 52%, oklch(0.24 0.04 48)),
+    oklch(0.1 0.006 245);
+}
+
+.studio-frame-wide {
+  background:
+    linear-gradient(112deg, oklch(0.25 0.045 45), oklch(0.09 0.006 245) 45%, oklch(0.28 0.085 24)),
+    oklch(0.1 0.006 245);
+}
+
+.studio-showcase,
+.studio-work-section {
+  border-top: 1px solid oklch(0.94 0.01 82 / 0.08);
+  padding: 6.6rem 2.9rem;
+}
+
+.studio-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 46rem) auto;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 4.2rem;
+}
+
+.studio-section-head h2 {
+  margin-top: 0;
+  font-size: 3.2rem;
+}
+
+.studio-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-self: end;
+}
+
+.studio-actions a {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid oklch(0.94 0.01 82 / 0.1);
+  border-radius: 999px;
+  background: oklch(0.2 0.007 245 / 0.88);
+  padding: 0 1.65rem;
+  color: oklch(0.72 0.12 182);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.studio-wide-frame {
+  min-height: 43rem;
+}
+
+.studio-strip-section {
+  overflow: hidden;
+  border-top: 1px solid oklch(0.94 0.01 82 / 0.08);
+  padding: 6.4rem 0 0;
+}
+
+.studio-mini-strip {
+  display: flex;
+  width: max-content;
+  gap: 1.6rem;
+  padding: 0 2.9rem 4.2rem;
+  transform: translateX(-4rem);
+}
+
+.studio-mini-strip .studio-frame {
+  width: 21rem;
+  min-height: 9.4rem;
+  flex: 0 0 auto;
+}
+
+.studio-mark-strip {
+  overflow: hidden;
+  border-bottom: 1px solid oklch(0.94 0.01 82 / 0.08);
+  padding: 2.4rem 0 4.6rem;
+}
+
+.studio-mark-track {
+  display: flex;
+  width: max-content;
+  gap: 5.5rem;
+  animation: studioTicker 30s linear infinite;
+}
+
+.studio-mark-track span {
+  color: oklch(0.56 0.006 82);
+  font-size: 1.75rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.studio-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.studio-work-grid .studio-frame {
+  min-height: 32rem;
+}
+
+.studio-final {
+  background: oklch(0.105 0.006 245);
+}
+
+.studio-final-glow {
+  background:
+    linear-gradient(115deg, transparent, oklch(0.72 0.12 182 / 0.12), transparent 64%),
+    linear-gradient(25deg, oklch(0.56 0.15 30 / 0.1), transparent 48%);
+}
+
+.studio-final h2 {
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+}
+
+@keyframes studioTicker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-hero-video,
+  .studio-mark-track {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .studio-nav {
+    grid-template-columns: 1fr auto;
+    padding: 1.15rem 1.35rem;
+  }
+
+  .studio-nav-links {
+    display: none;
+  }
+
+  .studio-feature-grid,
+  .studio-section-head,
+  .studio-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-actions,
+  .studio-pill {
+    justify-self: start;
+  }
+
+  .studio-hero-copy {
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 2rem;
+  }
+
+  .studio-hero-copy h1,
+  .studio-final h2 {
+    font-size: 4.8rem;
+  }
+
+  .studio-intro,
+  .studio-showcase,
+  .studio-work-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .studio-feature-grid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .studio-intro p,
+  .studio-section-head h2 {
+    font-size: 2.55rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .studio-logo {
+    font-size: 1.35rem;
+  }
+
+  .studio-pill {
+    min-height: 2.25rem;
+    padding: 0 0.9rem;
+    font-size: 0.62rem;
+  }
+
+  .studio-hero {
+    min-height: 92svh;
+  }
+
+  .studio-hero-copy h1,
+  .studio-final h2 {
+    font-size: 3.7rem;
+  }
+
+  .studio-intro {
+    padding-top: 4.4rem;
+    padding-bottom: 5.2rem;
+  }
+
+  .studio-intro p,
+  .studio-section-head h2 {
+    font-size: 2.1rem;
+  }
+
+  .studio-feature-grid {
+    padding-bottom: 6.2rem;
+  }
+
+  .studio-wide-frame {
+    min-height: 24rem;
+  }
+
+  .studio-actions {
+    flex-wrap: wrap;
   }
 }
