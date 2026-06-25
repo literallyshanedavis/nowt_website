@@ -454,6 +454,13 @@ body {
 
 /* ---------- THIRTYSEVEN STUDIO LANDING ---------- */
 .studio-page {
+  --studio-type-micro: 0.7rem;
+  --studio-type-body: 1.03rem;
+  --studio-type-card-title: 1.67rem;
+  --studio-type-section: 2.7rem;
+  --studio-type-lede: 2.7rem;
+  --studio-type-display: 5.35rem;
+  --studio-type-display-final: 5.35rem;
   min-height: 100vh;
   background: oklch(0.105 0.006 245);
   color: oklch(0.94 0.01 82);
@@ -490,7 +497,7 @@ body {
   align-items: center;
   gap: 2.65rem;
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: calc(var(--studio-type-micro) * 0.94);
   text-transform: uppercase;
 }
 
@@ -520,7 +527,7 @@ body {
   background: oklch(0.25 0.006 245 / 0.82);
   padding: 0 1.35rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--studio-type-micro);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -581,18 +588,18 @@ body {
 }
 
 .studio-hero-copy h1 {
-  font-size: 5.25rem;
+  font-size: var(--studio-type-display);
 }
 
 .studio-final h2 {
-  font-size: 5.9rem;
+  font-size: var(--studio-type-display-final);
 }
 
 .studio-kicker {
   margin: 0 0 1rem;
   color: oklch(0.72 0.12 182);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--studio-type-micro);
   text-transform: uppercase;
 }
 
@@ -604,9 +611,9 @@ body {
   max-width: 60rem;
   margin: 0;
   color: oklch(0.92 0.01 82);
-  font-size: 3rem;
+  font-size: var(--studio-type-lede);
   font-weight: 300;
-  line-height: 1.18;
+  line-height: 1.22;
 }
 
 .studio-feature-grid {
@@ -620,7 +627,7 @@ body {
 .studio-section-head h2 {
   margin: 1.45rem 0 0;
   color: oklch(0.96 0.01 82);
-  font-size: 1.65rem;
+  font-size: var(--studio-type-card-title);
   font-weight: 300;
   line-height: 1.16;
 }
@@ -630,7 +637,7 @@ body {
   max-width: 45rem;
   margin: 1rem 0 0;
   color: oklch(0.68 0.011 82);
-  font-size: 1.03rem;
+  font-size: var(--studio-type-body);
   line-height: 1.7;
 }
 
@@ -720,7 +727,7 @@ body {
 
 .studio-section-head h2 {
   margin-top: 0;
-  font-size: 3.2rem;
+  font-size: var(--studio-type-section);
 }
 
 .studio-actions {
@@ -740,7 +747,7 @@ body {
   padding: 0 1.65rem;
   color: oklch(0.72 0.12 182);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: calc(var(--studio-type-micro) * 1.07);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -753,7 +760,7 @@ body {
   max-width: 38rem;
   margin: 1.1rem 0 0;
   color: oklch(0.82 0.012 82);
-  font-size: 1.1rem;
+  font-size: var(--studio-type-body);
   line-height: 1.7;
 }
 
@@ -767,7 +774,7 @@ body {
 .studio-content-card h3 {
   margin: 0;
   color: oklch(0.96 0.01 82);
-  font-size: 2.5rem;
+  font-size: var(--studio-type-section);
   font-weight: 300;
   line-height: 1.16;
 }
@@ -777,7 +784,7 @@ body {
 .studio-card-kicker {
   margin: 1rem 0 0;
   color: oklch(0.68 0.011 82);
-  font-size: 1.03rem;
+  font-size: var(--studio-type-body);
   line-height: 1.7;
 }
 
@@ -802,7 +809,7 @@ body {
 .studio-card-kicker {
   color: oklch(0.72 0.12 182);
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: calc(var(--studio-type-micro) * 1.06);
   text-transform: uppercase;
 }
 
@@ -841,7 +848,7 @@ body {
 
 .studio-mark-track span {
   color: oklch(0.56 0.006 82);
-  font-size: 1.75rem;
+  font-size: var(--studio-type-card-title);
   font-weight: 650;
   white-space: nowrap;
 }
@@ -868,7 +875,6 @@ body {
 
 .studio-final h2 {
   margin-bottom: 1.5rem;
-  font-size: 5rem;
 }
 
 @keyframes studioTicker {
@@ -888,6 +894,15 @@ body {
 }
 
 @media (max-width: 980px) {
+  .studio-page {
+    --studio-type-body: 1rem;
+    --studio-type-card-title: 1.55rem;
+    --studio-type-section: 2.35rem;
+    --studio-type-lede: 2.35rem;
+    --studio-type-display: 4.2rem;
+    --studio-type-display-final: 4.2rem;
+  }
+
   .studio-nav {
     grid-template-columns: 1fr auto;
     padding: 1.15rem 1.35rem;
@@ -917,11 +932,6 @@ body {
     bottom: 2rem;
   }
 
-  .studio-hero-copy h1,
-  .studio-final h2 {
-    font-size: 4.2rem;
-  }
-
   .studio-intro,
   .studio-showcase,
   .studio-work-section {
@@ -934,13 +944,19 @@ body {
     padding-right: 1.5rem;
   }
 
-  .studio-intro p,
-  .studio-section-head h2 {
-    font-size: 2.55rem;
-  }
 }
 
 @media (max-width: 620px) {
+  .studio-page {
+    --studio-type-micro: 0.62rem;
+    --studio-type-body: 0.98rem;
+    --studio-type-card-title: 1.42rem;
+    --studio-type-section: 1.95rem;
+    --studio-type-lede: 1.95rem;
+    --studio-type-display: 3.15rem;
+    --studio-type-display-final: 3.15rem;
+  }
+
   .studio-logo {
     font-size: 1.18rem;
   }
@@ -955,19 +971,9 @@ body {
     min-height: 78svh;
   }
 
-  .studio-hero-copy h1,
-  .studio-final h2 {
-    font-size: 3.15rem;
-  }
-
   .studio-intro {
     padding-top: 4.4rem;
     padding-bottom: 5.2rem;
-  }
-
-  .studio-intro p,
-  .studio-section-head h2 {
-    font-size: 2.1rem;
   }
 
   .studio-feature-grid {
